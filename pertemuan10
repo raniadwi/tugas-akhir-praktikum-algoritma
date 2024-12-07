@@ -1,0 +1,21 @@
+import streamlit as st
+import pandas as pd
+import numpy as np
+
+st.title("Mendeteksi anak-anak di Indonesia  termasuk wilayahnya yang kurang berkembang")
+
+import pandas as pd
+
+data = pd.read_csv('jumlah-siswa-putus-sekolah-menurut-tingkat-tiap-provinsi-indonesia-sd-2023.csv', encoding='latin1')
+
+st.write("Data-data:")
+st.dataframe(data)
+
+jumlah_anak_putus_sekolah = st.number_input("Jumlah Anak Putus Sekolah", min_value=0, step=1, value=584)
+tingkat_pendidikan = st.selectbox("Tingkat Pendidikan", options=["Tingkat I", "Tingkat II", "Tingkat III", "Tingkat IV", "Tingkat V"])
+status_sekolah = st.selectbox("Status Sekolah", options=["Putus Sekolah", "Masih Sekolah"])
+tipe_sekolah= st.selectbox("Tipe Sekolah ", options=["Swasta", "Negri"])
+
+if st.button("Prediksi"):
+
+    st.success('Jakarta!')
